@@ -19,7 +19,7 @@ describe("test de les funcions de la ToDo list", () => {
   };
   const originalDocument = globalThis.document;
 
-  test("afegirTasca debería agregar una tarea", () => {
+  test("afegirTasca hauria d'afegfir una tasca a l'array de tasques", () => {
     globalThis.document = documentMock as any;
     globalThis.alert = vitest.fn();
     afegirTasca();
@@ -37,7 +37,7 @@ describe("test de les funcions de la ToDo list", () => {
   test("mostrarTasca() hauria de mostrar l'array de tasques", () => {
     globalThis.document = documentMock as any;
     globalThis.alert = vitest.fn();
-    tasques.length = 1;
+    afegirTasca();
     mostrarTasca();
     expect(tasques).toHaveLength(1);
     globalThis.document = originalDocument;

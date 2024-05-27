@@ -18,7 +18,7 @@
   ],
   "author": "Claudio Martin Herranz",
   "license": "ISC",
-  "repository": "https://github.com/ClaudioMartinH/ITAcademy-Especialitzacio-NodeJS/tree/main/sprints/todolistNew",
+  "repository": "https://github.com/ClaudioMartinH/entrega-1.1.git",
   "devDependencies": {
     "@types/node": "^20.12.8",
     "nodemon": "^3.1.0"

@@ -1,0 +1,33 @@
+{
+  "name": "todolist",
+  "version": "0.0.1",
+  "description": "todo list con frontend sencillo, tdd y desarrollada con typescript",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "type": "module",
+  "scripts": {
+    "test": "vitest"
+  },
+  "keywords": [
+    "todo",
+    "node",
+    "sprint",
+    "itacademy"
+  ],
+  "author": "Claudio Martin Herranz",
+  "license": "ISC",
+  "repository": "https://github.com/ClaudioMartinH/ITAcademy-Especialitzacio-NodeJS/tree/main/sprints/todolistNew",
+  "devDependencies": {
+    "@types/node": "^20.12.8",
+    "nodemon": "^3.1.0"
+  },
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "express": "^4.19.2",
+    "typescript": "^5.4.5",
+    "vitest": "^1.5.3"
+  }, 
+  "include": "./**/**/*"
+}

@@ -1,0 +1,170 @@
+body {
+  background-image: url("../css/img/pexels-karolina-grabowska-44644382.jpg");
+  background-size: cover;
+}
+.encabezado {
+  background: rgba(0, 0, 0, 0.616);
+  color: azure;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: xx-large;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  width: auto;
+  margin: auto;
+  padding: auto;
+}
+.container {
+  width: auto;
+  margin: auto;
+  padding: auto;
+  background: rgba(134, 177, 181, 0.664);
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px rgba(240, 209, 209, 0.163);
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-display: inline;
+}
+.container2 {
+  width: auto;
+  height: fit-content;
+  margin: auto;
+  padding: auto;
+  background: rgba(95, 113, 135, 0.411);
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+.container3 {
+  width: auto;
+  margin: auto;
+  padding: auto;
+  background: rgba(91, 121, 158, 0.638);
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px rgba(54, 39, 39, 0.703);
+  margin-top: 1px;
+  margin-bottom: 1px;
+  margin-left: 45px;
+  margin-right: 52px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: small;
+}
+.container3:hover{
+  outline: black;
+  box-shadow: 0 0 5px rgba(36, 36, 36, 0.5);
+}
+button {
+  color: white;
+  background: rgba(39, 71, 72, 0.906);
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  font-family: monospace;
+}
+button:hover {
+  color: rgba(39, 71, 72, 0.906);
+  background: white;
+  padding: 10px;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  font-family: monospace;
+}
+div {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: medium;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: 15px;
+  margin-right: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+textarea {
+  width: 250px;
+  height: 50px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: small;
+  text-align: start;
+  margin-top: 1px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  padding-left: 5px;
+  padding-right: 5px;
+  background-color: rgba(240, 255, 255, 0.492);
+}
+textarea:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(36, 36, 36, 0.5);
+}
+textarea:hover {
+  outline: none;
+  box-shadow: 0 0 5px rgba(36, 36, 36, 0.5);
+}
+p {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: small;
+  font-style: normal;
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+footer {
+  background: rgba(0, 0, 0, 0.616);
+  color: azure;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: small;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+   width: auto;
+  margin: auto;
+  padding: auto;
+}
+a {
+  color: rgb(238, 238, 249);
+}
+a:visited {
+  color: rgb(251, 209, 251);
+}
+a:hover {
+  color: rgb(198, 63, 63);
+}
+a:active {
+  color: rgb(28, 216, 28);
+}

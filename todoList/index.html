@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDoList</title>
+    <link rel="stylesheet" href="./css/estilos.css" />
+  </head>
+  <header class="encabezado">To Do List</header>
+  <body>
+    <div class="container">
+      Bienvenid@ a tu ToDo List<br />
+      Tu espacio para gestionar las tareas del día a día<br />
+      Registra, completa o elimina tus tareas pendientes
+     <p>
+        <textarea
+          title="Introduce aqui el texto de tu tarea o bien el número de tarea a completar o eliminar"
+          id="tskUs"
+          type="text"
+          columns="50"
+          rows="4"
+          placeholder="Escribe aquí"
+        ></textarea>
+      </p>
+      <button title="Introduce tu tarea y haz clic aquí" id="bot1">AGREGAR<br />TAREA</button>
+      <button title="Introduce el número de tarea a eliminar y haz clic aquí" id="bot2">ELIMINAR<br />TAREA</button>
+      <button title="Introduce el número de tarea a completar y haz clic aquí" id="bot3">COMPLETAR<br />TAREA</button>
+      <button id="bot4">MOSTRAR<br />TAREAS</button>
+    </div>
+    <div class="container2">
+      Estas son tus tareas registradas
+      <hr width="cover" />
+      <div id="showTsk"></div>
+    </div>
+  </body>
+  <script type="module">
+    import {
+      tasques,
+      afegirTasca,
+      completarTasca,
+      mostrarTasca,
+      eliminarTasca
+    } from "./dist/src/index.js";
+    document.getElementById("bot1").addEventListener("click", afegirTasca);
+    document.getElementById("bot2").addEventListener("click", eliminarTasca);
+    document.getElementById("bot3").addEventListener("click", completarTasca);
+    document.getElementById("bot4").addEventListener("click", mostrarTasca);
+  </script>
+  <footer><a href="https://github.com/ClaudioMartinH/ITAcademy-Especialitzacio-NodeJS">Claudio Martin Herranz 2024</a> || <a href="https://itacademy.barcelonactiva.cat/login/index.php">ITAcademy Barcelona Activa</a>    
+  </footer>
+</html>

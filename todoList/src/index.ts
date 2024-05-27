@@ -47,7 +47,7 @@ export function mostrarTasca(): void {
       }</div>`;
       llistaTasques.innerHTML += tareaHTML;
     });
-  }
+  } 
 }
 }
 export function eliminarTasca(): void {
@@ -86,7 +86,7 @@ export function completarTasca(): void {
     ) {
       tasques[indexUsuari].completada = true;
     } 
-  }
+  } else { alert("No hay tareas que completar")}
   mostrarTasca();
   netejarText();
 }

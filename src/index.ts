@@ -6,7 +6,9 @@ interface Tasca {
 export const tasques: Tasca[] = [];
 
 export function netejarText(): void {
-  const tascaUsuari:HTMLInputElement = document.getElementById("tskUs") as HTMLInputElement;
+  const tascaUsuari: HTMLInputElement = document.getElementById(
+    "tskUs"
+  ) as HTMLInputElement;
   if (tascaUsuari !== null) {
     tascaUsuari.value = "";
   }
@@ -16,7 +18,7 @@ export function afegirTasca(): void {
   const tascaUsuari: HTMLInputElement = document.getElementById(
     "tskUs"
   ) as HTMLInputElement;
-  let tascaTexto:string = "";
+  let tascaTexto: string = "";
   if (tascaUsuari !== null && tascaUsuari.value.trim() !== "") {
     tascaTexto = tascaUsuari.value.trim();
     const novaTasca: Tasca = {
@@ -33,30 +35,30 @@ export function afegirTasca(): void {
 }
 
 export function mostrarTasca(): void {
-  const llistaTasques:HTMLElement|null = document.getElementById("showTsk");
+  const llistaTasques: HTMLElement | null = document.getElementById("showTsk");
   if (llistaTasques !== null) {
     llistaTasques.innerHTML = "";
     if (tasques.length === 0) {
       llistaTasques.innerHTML = "No hay tareas que mostrar";
     } else {
-    tasques.forEach((tarea, index) => {
-      const tareaHTML:string = `<div title="${tarea.nombre} ${
-        tarea.completada ? "| Completada" : "| Pendiente"
-      }" class="container3">   ${index + 1}    -  ${tarea.nombre}    -  ${
-        tarea.completada ? "    Completada ✅" : "    Pendiente ❌"
-      }</div>`;
-      llistaTasques.innerHTML += tareaHTML;
-    });
-  } 
-}
+      tasques.forEach((tarea, index) => {
+        const tareaHTML: string = `<div title="${tarea.nombre} ${
+          tarea.completada ? "| Completada" : "| Pendiente"
+        }" class="container3">   ${index + 1}    -  ${tarea.nombre}    -  ${
+          tarea.completada ? "    Completada ✅" : "    Pendiente ❌"
+        }</div>`;
+        llistaTasques.innerHTML += tareaHTML;
+      });
+    }
+  }
 }
 export function eliminarTasca(): void {
   const tascaUsuari: HTMLInputElement = document.getElementById(
     "tskUs"
   ) as HTMLInputElement;
   if (tascaUsuari !== null) {
-    const indexUsuari:number = parseInt(tascaUsuari.value) - 1;
-    if (tasques.length === 0){
+    const indexUsuari: number = parseInt(tascaUsuari.value) - 1;
+    if (tasques.length === 0) {
       alert("No hay tareas que eliminar");
     } else if (
       !isNaN(indexUsuari) &&
@@ -71,12 +73,12 @@ export function eliminarTasca(): void {
 }
 
 export function completarTasca(): void {
-  const tascaUsuari:HTMLInputElement = document.getElementById(
+  const tascaUsuari: HTMLInputElement = document.getElementById(
     "tskUs"
   ) as HTMLInputElement;
   if (tascaUsuari !== null) {
-    const indexUsuari:number = parseInt(tascaUsuari.value) - 1;
-    if (tasques.length === 0){
+    const indexUsuari: number = parseInt(tascaUsuari.value) - 1;
+    if (tasques.length === 0) {
       alert("No hay tareas que completar");
     } else if (
       !isNaN(indexUsuari) &&
@@ -85,8 +87,12 @@ export function completarTasca(): void {
       tasques[indexUsuari] !== undefined
     ) {
       tasques[indexUsuari].completada = true;
-    } 
-  } else { alert("No hay tareas que completar")}
+    } else {
+      alert("Indice de tarea no válido");
+    }
+  } else {
+    alert("No hay tareas que completar");
+  }
   mostrarTasca();
   netejarText();
 }

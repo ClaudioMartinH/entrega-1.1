@@ -10,8 +10,7 @@
   "scripts": {
     "test": "vitest",
     "server": "node server.cjs",
-    "cli": "node dist/src/appCLI.js",
-    "eslint": "eslint './**/*{js, ts, cjs}'"
+    "cli": "node dist/src/appCLI.js"
   },
   "keywords": [
     "todo",

@@ -66,8 +66,10 @@ export function eliminarTasca(): void {
       indexUsuari < tasques.length
     ) {
       tasques.splice(indexUsuari, 1);
+    } else {
+      alert("Indice de tarea inválido");
     }
-  }
+  } else { alert("No hay tareas que eliminar");}
   mostrarTasca();
   netejarText();
 }

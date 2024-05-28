@@ -8,7 +8,7 @@ La aplicación es una todo list, con funcionalidades para agregar, modificar y e
 
 - Para ejecutar el proyecto hay que copiarse el repositorio y bajarselo, tener **NodeJS** instalado en el ordenador.
 
-- Se necesita asimismo instalar **typescript, vitest, chalk y express**; Se puede hacer ejecutando el comando en consola:
+- Se necesita asimismo instalar **typescript, vitest, chalk y express**, sus dependencias y la carpeta node_modules aque he decidido incluirla en el archivo .gitignore para facilitar su descarga al ser más ligera la aplicación de esta forma; Se puede hacer ejecutando el comando en consola:
 "npm install" teniendo el editor de codigo abierto en la carpeta donde hayamos bajado el repositorio.
 
 - Para ejecutar el testing basta con ejecutar el comando: **"npm run test"**

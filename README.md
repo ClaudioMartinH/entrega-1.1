@@ -6,7 +6,7 @@ La aplicación es una todo list, con funcionalidades para agregar, modificar y e
 2. el archivo para ejecutar la app en la consola es appCLI.js que viene autotanspilado de appCLI.ts
 3. el archivo de testing con vitest es index.test.ts en la carpeta testing
 
-- Para ejecutar el proyecto hay que copiarse el repositorio y bajarselo, tener **NodeJS** instalado en el ordenador.
+- Para ejecutar el proyecto hay que copiarse el repositorio y bajarselo o bien acudir a la release 1.0.0 y descargarse el zip, tener **NodeJS** instalado en el ordenador.
 
 - Se necesita asimismo instalar **typescript, vitest, chalk y express**, sus dependencias y la carpeta node_modules aque he decidido incluirla en el archivo .gitignore para facilitar su descarga al ser más ligera la aplicación de esta forma; Se puede hacer ejecutando el comando en consola:
 "npm install" teniendo el editor de codigo abierto en la carpeta donde hayamos bajado el repositorio.

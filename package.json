@@ -8,7 +8,9 @@
   },
   "type": "module",
   "scripts": {
-    "test": "vitest"
+    "test": "vitest",
+    "server": "node server.cjs",
+    "cli": "node dist/src/appCLI.js"
   },
   "keywords": [
     "todo",

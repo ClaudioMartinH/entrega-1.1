@@ -2,7 +2,7 @@
 
 La aplicación es una todo list, con funcionalidades para agregar, modificar y eliminar tareas.
 
-1. el archivo principal del proyecto es index.ts, compilado automaticamente a index.js
+1. el archivo principal del proyecto es index.ts, autotranspilado a index.js
 2. el archivo para ejecutar la app en la consola es appCLI.js que viene autotanspilado de appCLI.ts
 3. el archivo de testing con vitest es index.test.ts en la carpeta testing
 

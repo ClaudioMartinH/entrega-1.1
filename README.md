@@ -1,9 +1,9 @@
 # entrega-1.1 
 
 La aplicación es una todo list, con funcionalidades para agregar, modificar y eliminar tareas.
-para ejecutar el proyecto hay que copiarse el repositorio y bajarselo, tener nodejs instalado en el ordenador.
-se necesita asimismo instalar typescript, vitest, chalk y express; y se puede hacer ejecutando el comando:
-(npm install) una vez tengamos abierto el proyecto en nuestro editor de codigo en la carpeta que contenga el proyecto
+- Para ejecutar el proyecto hay que copiarse el repositorio y bajarselo, tener **NodeJS** instalado en el ordenador.
+- Se necesita asimismo instalar **typescript, vitest, chalk y express**; Se puede hacer ejecutando el comando en consola:
+"npm install" teniendo el editor de codigo abierto en la carpeta donde hayamos bajado el repositorio.
 
 - Para levantar el servidor en el puerto 3000 del localhost y ejecutar el frontend basta con entrar desde consola y ejecutar el comando: "node server.cjs" y posteriormente hacer click en este link: http://localhost:3000/index.html .
 

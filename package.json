@@ -10,8 +10,7 @@
   "scripts": {
     "test": "vitest",
     "server": "node server.cjs",
-    "cli": "node dist/src/appCLI.js",
-    "eslint": "eslint './**/*/*{.js}'"
+    "cli": "node dist/src/appCLI.js"
   },
   "keywords": [
     "todo",
@@ -25,6 +24,7 @@
   "devDependencies": {
     "@eslint/js": "^9.3.0",
     "@types/node": "^20.12.8",
+    "eslint": "^9.3.0",
     "globals": "^15.3.0",
     "nodemon": "^3.1.0",
     "typescript-eslint": "^7.11.0"

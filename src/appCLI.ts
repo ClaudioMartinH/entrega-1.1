@@ -1,19 +1,19 @@
 import { createInterface } from "readline";
 import chalk from "chalk";
 
-interface Tasca {
+interface Task {
   index: number;
-  nombre: string;
-  completada: boolean;
+  textTask: string;
+  complete: boolean;
 }
-let tasques: Tasca[] = [];
+let tasks: Task[] = [];
 
 const rl = createInterface({
   input: process.stdin,
   output: process.stdout,
 });
 
-function mostrarMenu() {
+function showMenu() {
   console.log(chalk.bgBlueBright.bold("\n-----To Do List App-----\n"));
   console.log(chalk.cyanBright("Menú d'opcions"));
   console.log("1. Afegir tasca ✳️");
@@ -24,82 +24,82 @@ function mostrarMenu() {
   console.log("\n");
 }
 
-function afegirTasca() {
+function addTask() {
   let index = 0;
-  rl.question(chalk.bgGrey("Escriu la tasca: "), (nombre) => {
-    tasques.push({index, nombre, completada: false });
+  rl.question(chalk.bgGrey("Escriu la tasca: "), (textTask) => {
+    tasks.push({index, textTask, complete: false });
     console.log(chalk.green.bold("Tasca afegida correctament\n"));
-    mostrarTasques();
+    showTasks();
   });
 }
 
-function mostrarTasques() {
+function showTasks() {
   console.log(chalk.yellow.bold("\n-----Tasques pendents-----\n"));
-  if (tasques.length === 0) {
+  if (tasks.length === 0) {
     console.log(chalk.greenBright("No hi han tasques per mostrar\n"));
   } else {
-    tasques.forEach((tasca, index) => {
-      let estat = tasca.completada ? "✅" : "❌";
-      if (tasca.completada) {
+    tasks.forEach((task, index) => {
+      let estat = task.complete ? "✅" : "❌";
+      if (task.complete) {
         console.log(
-          chalk.greenBright(`${index + 1}. ${estat} - ${tasca.nombre}`)
+          chalk.greenBright(`${index + 1}. ${estat} - ${task.textTask}`)
         );
       } else {
-        console.log(chalk.redBright(`${index + 1}. ${estat} - ${tasca.nombre}`));
+        console.log(chalk.redBright(`${index + 1}. ${estat} - ${task.textTask}`));
       }
     });
   }
-  mostrarMenu();
-  escollirOpcio();
+  showMenu();
+  selectOption();
 }
 
-function tascaCompletada() {
+function completeTask() {
   rl.question(
-    chalk.bgGrey("Introdueix el número de la tasca completada: "),
+    chalk.bgGrey("Introdueix el número de la tasca complete: "),
     (numeroTasca) => {
       const index = parseInt(numeroTasca) - 1;
-      if (index >= 0 && index < tasques.length) {
-        tasques[index].completada = true;
-        console.log(chalk.green.bold("Tasca completada\n"));
+      if (index >= 0 && index < tasks.length) {
+        tasks[index].complete = true;
+        console.log(chalk.green.bold("Tasca complete\n"));
       } else {
         console.log(chalk.red("Numero de tasca invàlid\n"));
       }
-      mostrarTasques();
+      showTasks();
     }
   );
 }
 
-function eliminarTasca() {
+function deleteTask() {
   rl.question(
     chalk.magenta("Introdueix el número de tasca a eliminar: "),
     (numeroTasca) => {
       const index = parseInt(numeroTasca) - 1;
-      if (index >= 0 && index < tasques.length) {
-        tasques.splice(index, 1);
-        mostrarTasques();
+      if (index >= 0 && index < tasks.length) {
+        tasks.splice(index, 1);
+        showTasks();
       } else {
         console.log(chalk.redBright("Numero de tasca invàlid"));
-        eliminarTasca();
+        deleteTask();
       }
     }
   );
 }
 
-function escollirOpcio() {
+function selectOption() {
   rl.question("Introdueix el número de l'opció desitjada: ", (eleccio) => {
     switch (eleccio) {
       case "1":
-        afegirTasca();
+        addTask();
 
         break;
       case "2":
-        eliminarTasca();
+        deleteTask();
         break;
       case "3":
-        tascaCompletada();
+        completeTask();
         break;
       case "4":
-        mostrarTasques();
+        showTasks();
         break;
       case "5":
         console.log(chalk.greenBright("Adéu 👋😉"));
@@ -109,12 +109,12 @@ function escollirOpcio() {
         console.log(
           chalk.redBright("Opció no valida, introdueix un número valid\n")
         );
-        mostrarMenu();
-        escollirOpcio();
+        showMenu();
+        selectOption();
         break;
     }
   });
 }
 
-mostrarMenu();
-escollirOpcio();
+showMenu();
+selectOption();

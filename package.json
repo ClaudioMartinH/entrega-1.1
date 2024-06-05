@@ -10,7 +10,8 @@
   "scripts": {
     "test": "vitest",
     "server": "node server.cjs",
-    "cli": "node dist/src/appCLI.js"
+    "cli": "node dist/src/appCLI.js",
+    "build": "tsc"
   },
   "keywords": [
     "todo",

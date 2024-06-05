@@ -1,100 +1,100 @@
-interface Tasca {
+interface Task {
   index: number;
-  nombre: string;
-  completada: boolean;
+  textTask: string;
+  complete: boolean;
 }
-export const tasques: Tasca[] = [];
+export const tasks: Task[] = [];
 
-export function netejarText(): void {
-  const tascaUsuari: HTMLInputElement = document.getElementById(
+export function cleanTextArea(): void {
+  const userTask: HTMLInputElement = document.getElementById(
     "tskUs"
   ) as HTMLInputElement;
-  if (tascaUsuari !== null) {
-    tascaUsuari.value = "";
+  if (userTask !== null) {
+    userTask.value = "";
   }
 }
 
-export function afegirTasca(): void {
-  const tascaUsuari: HTMLInputElement = document.getElementById(
+export function addTask(): void {
+  const userTask: HTMLInputElement = document.getElementById(
     "tskUs"
   ) as HTMLInputElement;
-  let tascaTexto: string = "";
-  if (tascaUsuari !== null && tascaUsuari.value.trim() !== "") {
-    tascaTexto = tascaUsuari.value.trim();
-    const novaTasca: Tasca = {
-      index: tasques.length + 1,
-      nombre: tascaTexto,
-      completada: false,
+  let taskText: string = "";
+  if (userTask !== null && userTask.value.trim() !== "") {
+    taskText = userTask.value.trim();
+    const newTask: Task = {
+      index: tasks.length + 1,
+      textTask: taskText,
+      complete: false,
     };
-    tasques.push(novaTasca);
-    mostrarTasca();
-    netejarText();
+    tasks.push(newTask);
+    showTasks();
+    cleanTextArea();
   } else {
     alert("Debes escribir una tarea");
   }
 }
 
-export function mostrarTasca(): void {
-  const llistaTasques: HTMLElement | null = document.getElementById("showTsk");
-  if (llistaTasques !== null) {
-    llistaTasques.innerHTML = "";
-    if (tasques.length === 0) {
-      llistaTasques.innerHTML = "No hay tareas que mostrar";
+export function showTasks(): void {
+  const taskList: HTMLElement | null = document.getElementById("showTsk");
+  if (taskList !== null) {
+    taskList.innerHTML = "";
+    if (tasks.length === 0) {
+      taskList.innerHTML = "No hay tareas que mostrar";
     } else {
-      tasques.forEach((tarea, index) => {
-        const tareaHTML: string = `<div title="${tarea.nombre} ${
-          tarea.completada ? "| Completada" : "| Pendiente"
-        }" class="container3">   ${index + 1}    -  ${tarea.nombre}    -  ${
-          tarea.completada ? "    Completada ✅" : "    Pendiente ❌"
+      tasks.forEach((task, index) => {
+        const tareaHTML: string = `<div title="${task.textTask} ${
+          task.complete ? "| Completada" : "| Pendiente"
+        }" class="container3">   ${index + 1}    -  ${task.textTask}    -  ${
+          task.complete ? "    Completada ✅" : "    Pendiente ❌"
         }</div>`;
-        llistaTasques.innerHTML += tareaHTML;
+        taskList.innerHTML += tareaHTML;
       });
     }
   }
 }
 export function eliminarTasca(): void {
-  const tascaUsuari: HTMLInputElement = document.getElementById(
+  const userTask: HTMLInputElement = document.getElementById(
     "tskUs"
   ) as HTMLInputElement;
-  if (tascaUsuari !== null) {
-    const indexUsuari: number = parseInt(tascaUsuari.value) - 1;
-    if (tasques.length === 0) {
+  if (userTask !== null) {
+    const userIndex: number = parseInt(userTask.value) - 1;
+    if (tasks.length === 0) {
       alert("No hay tareas que eliminar");
     } else if (
-      !isNaN(indexUsuari) &&
-      indexUsuari >= 0 &&
-      indexUsuari < tasques.length
+      !isNaN(userIndex) &&
+      userIndex >= 0 &&
+      userIndex < tasks.length
     ) {
-      tasques.splice(indexUsuari, 1);
+      tasks.splice(userIndex, 1);
     } else {
       alert("Indice de tarea inválido");
     }
   } else { alert("No hay tareas que eliminar");}
-  mostrarTasca();
-  netejarText();
+  showTasks();
+  cleanTextArea();
 }
 
 export function completarTasca(): void {
-  const tascaUsuari: HTMLInputElement = document.getElementById(
+  const userTask: HTMLInputElement = document.getElementById(
     "tskUs"
   ) as HTMLInputElement;
-  if (tascaUsuari !== null) {
-    const indexUsuari: number = parseInt(tascaUsuari.value) - 1;
-    if (tasques.length === 0) {
+  if (userTask !== null) {
+    const userIndex: number = parseInt(userTask.value) - 1;
+    if (tasks.length === 0) {
       alert("No hay tareas que completar");
     } else if (
-      !isNaN(indexUsuari) &&
-      indexUsuari >= 0 &&
-      indexUsuari < tasques.length &&
-      tasques[indexUsuari] !== undefined
+      !isNaN(userIndex) &&
+      userIndex >= 0 &&
+      userIndex < tasks.length &&
+      tasks[userIndex] !== undefined
     ) {
-      tasques[indexUsuari].completada = true;
+      tasks[userIndex].complete = true;
     } else {
       alert("Indice de tarea no válido");
     }
   } else {
     alert("No hay tareas que completar");
   }
-  mostrarTasca();
-  netejarText();
+  showTasks();
+  cleanTextArea();
 }

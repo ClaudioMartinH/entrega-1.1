@@ -1,81 +1,85 @@
-export const tasques = [];
-export function netejarText() {
-  const tascaUsuari = document.getElementById("tskUs");
-  if (tascaUsuari !== null) {
-    tascaUsuari.value = "";
-  }
-}
-export function afegirTasca() {
-  const tascaUsuari = document.getElementById("tskUs");
-  let tascaTexto = "";
-  if (tascaUsuari !== null && tascaUsuari.value.trim() !== "") {
-    tascaTexto = tascaUsuari.value.trim();
-    const novaTasca = {
-      index: tasques.length + 1,
-      nombre: tascaTexto,
-      completada: false,
-    };
-    tasques.push(novaTasca);
-    mostrarTasca();
-    netejarText();
-  } else {
-    alert("Debes escribir una tarea");
-  }
-}
-export function mostrarTasca() {
-  const llistaTasques = document.getElementById("showTsk");
-  if (llistaTasques !== null) {
-    llistaTasques.innerHTML = "";
-    if (tasques.length === 0) {
-      llistaTasques.innerHTML = "No hay tareas que mostrar";
-    } else {
-      tasques.forEach((tarea, index) => {
-        const tareaHTML = `<div title="${tarea.nombre} ${
-          tarea.completada ? "| Completada" : "| Pendiente"
-        }" class="container3">   ${index + 1}    -  ${tarea.nombre}    -  ${
-          tarea.completada ? "    Completada ✅" : "    Pendiente ❌"
-        }</div>`;
-        llistaTasques.innerHTML += tareaHTML;
-      });
+export const tasks = [];
+export function cleanTextArea() {
+    const userTask = document.getElementById("tskUs");
+    if (userTask !== null) {
+        userTask.value = "";
     }
-  }
+}
+export function addTask() {
+    const userTask = document.getElementById("tskUs");
+    let taskText = "";
+    if (userTask !== null && userTask.value.trim() !== "") {
+        taskText = userTask.value.trim();
+        const newTask = {
+            index: tasks.length + 1,
+            textTask: taskText,
+            complete: false,
+        };
+        tasks.push(newTask);
+        showTasks();
+        cleanTextArea();
+    }
+    else {
+        alert("Debes escribir una tarea");
+    }
+}
+export function showTasks() {
+    const taskList = document.getElementById("showTsk");
+    if (taskList !== null) {
+        taskList.innerHTML = "";
+        if (tasks.length === 0) {
+            taskList.innerHTML = "No hay tareas que mostrar";
+        }
+        else {
+            tasks.forEach((task, index) => {
+                const tareaHTML = `<div title="${task.textTask} ${task.complete ? "| Completada" : "| Pendiente"}" class="container3">   ${index + 1}    -  ${task.textTask}    -  ${task.complete ? "    Completada ✅" : "    Pendiente ❌"}</div>`;
+                taskList.innerHTML += tareaHTML;
+            });
+        }
+    }
 }
 export function eliminarTasca() {
-  const tascaUsuari = document.getElementById("tskUs");
-  if (tascaUsuari !== null) {
-    const indexUsuari = parseInt(tascaUsuari.value) - 1;
-    if (tasques.length === 0) {
-      alert("No hay tareas que eliminar");
-    } else if (
-      !isNaN(indexUsuari) &&
-      indexUsuari >= 0 &&
-      indexUsuari < tasques.length
-    ) {
-      tasques.splice(indexUsuari, 1);
-    } else { alert("Indice de tarea inválido")}
-  } else {alert("no hay tareas que eliminar")}
-  mostrarTasca();
-  netejarText();
+    const userTask = document.getElementById("tskUs");
+    if (userTask !== null) {
+        const userIndex = parseInt(userTask.value) - 1;
+        if (tasks.length === 0) {
+            alert("No hay tareas que eliminar");
+        }
+        else if (!isNaN(userIndex) &&
+            userIndex >= 0 &&
+            userIndex < tasks.length) {
+            tasks.splice(userIndex, 1);
+        }
+        else {
+            alert("Indice de tarea inválido");
+        }
+    }
+    else {
+        alert("No hay tareas que eliminar");
+    }
+    showTasks();
+    cleanTextArea();
 }
 export function completarTasca() {
-  const tascaUsuari = document.getElementById("tskUs");
-  if (tascaUsuari !== null) {
-    const indexUsuari = parseInt(tascaUsuari.value) - 1;
-    if (tasques.length === 0) {
-      alert("No hay tareas que completar");
-    } else if (
-      !isNaN(indexUsuari) &&
-      indexUsuari >= 0 &&
-      indexUsuari < tasques.length &&
-      tasques[indexUsuari] !== undefined
-    ) {
-      tasques[indexUsuari].completada = true;
-    } else {
-      alert("Indice de tarea no válido");
+    const userTask = document.getElementById("tskUs");
+    if (userTask !== null) {
+        const userIndex = parseInt(userTask.value) - 1;
+        if (tasks.length === 0) {
+            alert("No hay tareas que completar");
+        }
+        else if (!isNaN(userIndex) &&
+            userIndex >= 0 &&
+            userIndex < tasks.length &&
+            tasks[userIndex] !== undefined) {
+            tasks[userIndex].complete = true;
+        }
+        else {
+            alert("Indice de tarea no válido");
+        }
     }
-  } else {
-    alert("No hay tareas que completar");
-  }
-  mostrarTasca();
-  netejarText();
+    else {
+        alert("No hay tareas que completar");
+    }
+    showTasks();
+    cleanTextArea();
 }

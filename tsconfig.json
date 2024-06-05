@@ -16,7 +16,7 @@
   },
   "include": [
     "./src/*",
-    "./dist/**/*"
+    "./dist/*"
 ],
   "exclude": [
     "node_modules", 

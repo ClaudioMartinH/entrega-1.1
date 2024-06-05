@@ -52,7 +52,7 @@ export function showTasks(): void {
     }
   }
 }
-export function eliminarTasca(): void {
+export function deleteTask(): void {
   const userTask: HTMLInputElement = document.getElementById(
     "tskUs"
   ) as HTMLInputElement;
@@ -74,7 +74,7 @@ export function eliminarTasca(): void {
   cleanTextArea();
 }
 
-export function completarTasca(): void {
+export function completeTask(): void {
   const userTask: HTMLInputElement = document.getElementById(
     "tskUs"
   ) as HTMLInputElement;

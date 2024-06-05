@@ -1,16 +1,16 @@
 import { describe, expect, beforeEach, test, vitest } from "vitest";
 import {
-  tasques,
-  mostrarTasca,
-  eliminarTasca,
-  afegirTasca,
-  completarTasca,
+  tasks,
+  showTasks,
+  deleteTask,
+  addTask,
+  completeTask,
 } from "../src/index";
-import { mock } from "node:test";
+
 
 describe("test de les funcions de la ToDo list", () => {
   beforeEach(() => {
-    tasques.length = 0;
+    tasks.length = 0;
   });
   const documentMock = {
     getElementById: () => ({
@@ -19,31 +19,31 @@ describe("test de les funcions de la ToDo list", () => {
   };
   const originalDocument = globalThis.document;
 
-  test("afegirTasca hauria d'afegfir una tasca a l'array de tasques", () => {
+  test("addTask hauria d'afegfir una tasca a l'array de tasques", () => {
     globalThis.document = documentMock as any;
     globalThis.alert = vitest.fn();
-    afegirTasca();
-    expect(tasques.length).toEqual(1);
+    addTask();
+    expect(tasks.length).toEqual(1);
   });
 
-  test("eliminarTasca() hauria d'eliminar una tasca de l'array", () => {
+  test("deleteTask() hauria d'eliminar una tasca de l'array", () => {
     globalThis.document = documentMock as any;
     globalThis.alert = vitest.fn();
-    eliminarTasca();
-    expect(tasques).toHaveLength(0);
+    deleteTask();
+    expect(tasks).toHaveLength(0);
     globalThis.document = originalDocument;
   });
 
-  test("mostrarTasca() hauria de mostrar l'array de tasques", () => {
+  test("showTasks() hauria de mostrar l'array de tasques", () => {
     globalThis.document = documentMock as any;
     globalThis.alert = vitest.fn();
-    afegirTasca();
-    mostrarTasca();
-    expect(tasques).toHaveLength(1);
+    addTask();
+    showTasks();
+    expect(tasks).toHaveLength(1);
     globalThis.document = originalDocument;
   });
 
-  test("completarTasca() hauria de completar una tasca", () => {
+  test("completeTask() hauria de completar una tasca", () => {
     const documentMock = {
       getElementById: (id: string) => {
         if (id === "tskUs") {
@@ -56,9 +56,9 @@ describe("test de les funcions de la ToDo list", () => {
     };
     globalThis.alert = vitest.fn();
     globalThis.document = documentMock as any;
-    afegirTasca();
-    completarTasca();
-    expect(tasques[0].completada).toBe(true);
+    addTask();
+    completeTask();
+    expect(tasks[0].complete).toBe(true);
     globalThis.document = originalDocument;
   });
 });

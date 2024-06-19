@@ -35,16 +35,16 @@
   </body>
   <script type="module">
     import {
-      tasques,
-      afegirTasca,
-      completarTasca,
-      mostrarTasca,
-      eliminarTasca
+      tasks,
+      addTask,
+      completeTask,
+      showTasks,
+      deleteTask
     } from "./dist/index.js";
-    document.getElementById("bot1").addEventListener("click", afegirTasca);
-    document.getElementById("bot2").addEventListener("click", eliminarTasca);
-    document.getElementById("bot3").addEventListener("click", completarTasca);
-    document.getElementById("bot4").addEventListener("click", mostrarTasca);
+    document.getElementById("bot1").addEventListener("click", addTask);
+    document.getElementById("bot2").addEventListener("click", deleteTask);
+    document.getElementById("bot3").addEventListener("click", completeTask);
+    document.getElementById("bot4").addEventListener("click", showTasks);
   </script>
   <footer><a href="https://github.com/ClaudioMartinH/">Claudio Martin Herranz 2024</a> || <a href="https://itacademy.barcelonactiva.cat/login/index.php">ITAcademy Barcelona Activa</a>    
   </footer>

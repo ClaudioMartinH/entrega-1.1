@@ -70,7 +70,7 @@ body {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   font-size: small;
 }
-.container3:hover{
+.container3:hover {
   outline: black;
   box-shadow: 0 0 5px rgba(36, 36, 36, 0.5);
 }
@@ -145,14 +145,14 @@ footer {
   font-size: small;
   text-align: center;
   margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 1px;
   margin-left: 20px;
   margin-right: 20px;
   padding-top: 20px;
   padding-bottom: 20px;
   padding-left: 20px;
   padding-right: 20px;
-   width: auto;
+  width: auto;
   margin: auto;
   padding: auto;
 }
